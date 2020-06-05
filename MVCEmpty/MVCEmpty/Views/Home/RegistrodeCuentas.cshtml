@@ -1,0 +1,42 @@
+﻿@model List<Model.Tbl_Tipo_cuenta>
+@{
+    ViewBag.Title = "RegistrodeCuentas";
+    List<SelectListItem> items = (List<SelectListItem>)ViewBag.listitem;
+}
+
+<h2>RegistrodeCuentas</h2>
+
+<div class="container">
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">Datos del Cliente</div>
+            <div class="panel-body">
+                <dic class="form-group row">
+                    <label for="txtnombre" class="col-md-1">Nombre</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control"  id="txtnombre"/>
+                    </div>
+                    <label for="txtapellido" class="col-md-1">Apellido</label>
+                    <div class="col-md-4">
+                        <input class="form-control" type="text" id="txtapellido" />
+                    </div>
+                </dic>               
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Datos de la Cuenta</div>
+            <div class="panel-body">
+                <div class="form-group row">
+                    <label for="nocuenta" class="col-md-2" >No. Tarjeta</label>
+                    <div class="col-md-4">
+                        <input type="number" class="form-control" id="txtnocuenta" />
+                    </div>
+                    <label for="" class="col-md-1">Tipo Cuenta</label>
+                    <div class="col-md-4">
+                       @Html.DropDownList("IdTipoCuenta", new SelectList(ViewBag.listado, "IdTipoCuenta", "NombreCuenta"), new { @class="form-control" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

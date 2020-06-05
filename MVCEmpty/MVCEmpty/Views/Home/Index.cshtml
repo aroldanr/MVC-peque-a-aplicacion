@@ -1,0 +1,28 @@
+﻿@model List<Model.Tbl_Cuentas>
+@{
+    ViewBag.Title = "Home Page";
+    
+}
+
+<h2>Cuentas Bancarias</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre </th>
+            <th>No. Cuenta</th>
+            <th>Banco</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var persona in Model)
+        {            
+            <tr>
+                <td>@persona.Tbl_Persona.PrimerNombre  @persona.Tbl_Persona.PrimerApellido</td>
+                <td>@persona.NumerodeCuenta</td> 
+                <td>@persona.Tbl_Tipo_cuenta.NombreCuenta</td>                                                     
+            </tr>
+        }
+    </tbody>
+
+</table>
