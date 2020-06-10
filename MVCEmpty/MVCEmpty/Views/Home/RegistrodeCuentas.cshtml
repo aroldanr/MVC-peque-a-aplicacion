@@ -27,11 +27,11 @@
             <div class="panel-heading">Datos de la Cuenta</div>
             <div class="panel-body">
                 <div class="form-group row">
-                    <label for="nocuenta" class="col-md-2" >No. Tarjeta</label>
+                    <label for="nocuenta" class="col-md-1" >No. Tarjeta</label>
                     <div class="col-md-4">
                         <input type="number" class="form-control" id="txtnocuenta" />
                     </div>
-                    <label for="" class="col-md-1">Tipo Cuenta</label>
+                    <label for="IdTipoCuenta" class="col-md-1">Tipo Cuenta</label>
                     <div class="col-md-4">
                        @Html.DropDownList("IdTipoCuenta", new SelectList(ViewBag.listado, "IdTipoCuenta", "NombreCuenta"), new { @class="form-control" })
                     </div>
