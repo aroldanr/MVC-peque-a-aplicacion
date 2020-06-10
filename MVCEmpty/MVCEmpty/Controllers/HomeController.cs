@@ -13,6 +13,8 @@ namespace MVCEmpty.Controllers
         private Tbl_Cuentas Persona = new Tbl_Cuentas();
         private Tbl_Persona Pers = new Tbl_Persona();
         private Tbl_Tipo_cuenta TCuenta = new Tbl_Tipo_cuenta();
+
+
         public ActionResult Index()
         {
             return View(Persona.ListarCuentas());
@@ -21,11 +23,16 @@ namespace MVCEmpty.Controllers
         public ActionResult RegistrodeCuentas()
         {
             var lst = TCuenta.ListadeCuentas();
-
-
+            
             ViewBag.listado = lst.ToList();
             return View();
         }
-               
-    }
+
+        public ActionResult Login()
+        {
+            return View();
+
+        }
+
+           }
 }
