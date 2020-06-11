@@ -21,17 +21,19 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-  background-color: #4CAF50;
+  background-color: #F08080;
   color: white;
-  padding: 10px 18px;
-  margin: 8px 0;
+  padding: 8px 12px;
+  margin: 7px 0;
   border: none;
-  cursor: pointer;
-  width: 25%;
-  float: right;
+  cursor: auto;
+  width: 35%;
+  position: center;
+  text-align: justify;
+  width: 7rem;
+  font-size: 70%;
+ 
 }
-
-
 
 /* Center the image and position the close button */
 .imgcontainer {
@@ -41,8 +43,8 @@ button {
 }
 
 img.avatar {
-  width: 40%;
-  border-radius: 40%;
+  width: 30%;
+  border-radius: 35%;
 }
 
 .container {
@@ -60,8 +62,8 @@ span.psw {
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  width: 80%; /* Full width */
-  height: 80%; /* Full height */
+  width: 95%; /* Full width */
+  height: 95%; /* Full height */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   
@@ -79,14 +81,12 @@ span.psw {
 </head>
 <body>
 
-    <h2>Modal Login Form</h2>
-
    <div id="id01">
 
         <form class="modal-content animate" action="/action_page.php" method="post">
             <div class="imgcontainer">
                
-                <img src="~/Imagenes/img_avatar2.png" alt="Avatar" class="avatar">
+                <img src="~/Imagenes/img_avatar1.png" alt="Avatar" class="avatar">
                
             </div>
 
@@ -96,14 +96,13 @@ span.psw {
 
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
-
-                <button type="submit">Login</button>
+                <button type="submit" class="btn btn-default btn-sm" style="background-color:#008080">Login</button>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label>
             </div>
 
-            <div class="container" style="background-color:#f1f1f1">
+            <div class="container" style="background-color:#C0C0C0">
               <span class="psw">Forgot <a href="#">password?</a></span>
             </div>
         </form>
