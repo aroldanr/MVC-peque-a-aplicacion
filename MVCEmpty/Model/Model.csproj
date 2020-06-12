@@ -51,9 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelCTA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tbl_Cuentas.cs" />
+    <Compile Include="Tbl_Persona_Cuentas.cs" />
     <Compile Include="Tbl_Persona.cs" />
     <Compile Include="Tbl_Tipo_cuenta.cs" />
     <Compile Include="Tbl_Usuario.cs" />
