@@ -8,16 +8,10 @@ namespace Model
     using System.Linq;
 
     public partial class Tbl_Persona
-    {      
-        public Tbl_Persona()
-        {
-            Tbl_Cuentas = new List<Tbl_Cuentas>();
-        }
+    {             
 
         [Key]
-        public Guid IdPersona { get; set; }
-
-        public Guid IdUsuario { get; set; }
+        public Guid IdPersona { get; set; }     
 
         [Required]
         [StringLength(50)]
@@ -35,24 +29,9 @@ namespace Model
 
         public int? PersonaStatus { get; set; }
 
-       public ICollection<Tbl_Cuentas> Tbl_Cuentas { get; set; }
+       public List<Tbl_Persona_Cuentas> Tbl_Cuentas { get; set; }
 
-        public virtual Tbl_Usuario Tbl_Usuario { get; set; }
-
-        public List<Tbl_Persona> ListaPersona()
-        {
-            var Personas = new List<Tbl_Persona>();
-            ModelCTA dc = new ModelCTA();
-            try
-            {
-                Personas = (from x in dc.Tbl_Persona.Include("Tbl_Cuentas") select x).ToList();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            return Personas;
-        }
+        public Tbl_Usuario Tbl_Usuario { get; set; }
+      
     }
 }

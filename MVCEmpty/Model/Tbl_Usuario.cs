@@ -11,6 +11,11 @@ namespace Model
         [Key]
         public Guid IdUsuario { get; set; }
 
+        [Required]
+        [StringLength(20)]
+        public string UserLoging { get; set; }
+
+        [Required]
         [StringLength(50)]
         public string Contraseña { get; set; }
 

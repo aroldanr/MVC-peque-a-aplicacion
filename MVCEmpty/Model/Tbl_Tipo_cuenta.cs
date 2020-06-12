@@ -11,7 +11,7 @@ namespace Model
     {
         public Tbl_Tipo_cuenta()
         {
-            Tbl_Cuentas = new List<Tbl_Cuentas>();
+            Tbl_Cuentas = new List<Tbl_Persona_Cuentas>();
         }
 
         [Key]
@@ -20,23 +20,7 @@ namespace Model
         [StringLength(30)]
         public string NombreCuenta { get; set; }
 
-        public virtual List<Tbl_Cuentas> Tbl_Cuentas { get; set; }
-
-       
-        public List<Tbl_Tipo_cuenta> ListadeCuentas()
-        {
-            var Lista = new List<Tbl_Tipo_cuenta>();
-            ModelCTA cn = new ModelCTA();
-            try
-            {
-                Lista = (from x in cn.Tbl_Tipo_cuenta select x).ToList();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            return Lista;
-        }
+        public List<Tbl_Persona_Cuentas> Tbl_Cuentas { get; set; }               
+      
     }
 }
