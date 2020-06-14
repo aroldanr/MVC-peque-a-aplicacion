@@ -10,7 +10,7 @@ namespace Model
         public ModelCTA()
             : base("name=ModelCTA")
         {
-        }
+         }
 
         public DbSet<Tbl_Persona_Cuentas> Tbl_Cuentas { get; set; }
         public DbSet<Tbl_Persona> Tbl_Persona { get; set; }

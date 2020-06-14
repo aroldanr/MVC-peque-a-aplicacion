@@ -4,7 +4,7 @@
 @*@model List<Model.Tbl_Persona_Cuentas>*@
 @{
     ViewBag.Title = "Home Page";
-    
+
 }
 
 <h2>Cuentas Bancarias</h2>
@@ -18,14 +18,22 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var persona in Model)
-        {            
-            <tr>
-                <td>@persona.Tbl_Persona.PrimerNombre  @persona.Tbl_Persona.PrimerApellido</td>
-                <td>@persona.NumerodeCuenta</td> 
-                <td>@persona.Tbl_Tipo_cuenta.NombreCuenta</td>                                                     
-            </tr>
+        @if (Model != null)
+        {
+            foreach (var persona in Model)
+            {
+                <tr>
+                    <td>@persona.Tbl_Persona.PrimerNombre  @persona.Tbl_Persona.PrimerApellido</td>
+                    <td>@persona.NumerodeCuenta</td>
+                    <td>@persona.Tbl_Tipo_cuenta.NombreCuenta</td>
+                </tr>
+            }
         }
+        else
+        {
+                
+        }
+
     </tbody>
 
 </table>

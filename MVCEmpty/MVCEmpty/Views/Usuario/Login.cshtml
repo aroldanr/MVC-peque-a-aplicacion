@@ -5,13 +5,15 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <style>
+   
+     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
         }
@@ -28,7 +30,7 @@
 
         /* Set a style for all buttons */
         button {
-            background-color: #F08080;
+            background-color: #FF0000;
             color: white;
             padding: 8px 12px;
             margin: 7px 0;
@@ -83,24 +85,29 @@
         }
     </style>
 </head>
+<>
 <body>
-
     <div id="id01">
 
-        <form class="modal-content animate" action="/action_page.php" method="post">
+        <form class="modal-content animate" action="/Usuario/Login" method="post">
             <div class="imgcontainer">
-
-                <img src="~/Imagenes/img_avatar1.png" alt="Avatar" class="avatar">
+                @{
+                    if (!string.IsNullOrEmpty(ViewBag.Message))
+                    {
+                        <div class="alert alert-info">@ViewBag.Message</div>
+                    }
+                }
+              <img src="~/Imagenes/img_avatar1.png" alt="Avatar" class="avatar">
 
             </div>
 
-            <div class="container">
+            <div class="container">                
                 <label for="uname"><b>Username</b></label>
                 <input type="text" placeholder="Enter Username" name="uname" required>
 
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
-                <button type="submit" class="btn btn-default btn-sm" style="background-color:#008080">Login</button>
+                <button type="submit" class="btn btn-default btn-sm" style="background-color:#20DD4F">Login</button>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Recordarme
                 </label>
@@ -110,8 +117,8 @@
                 <span class="psw">Forgot <a href="#">password?</a></span>
             </div>
         </form>
-       
-    </div>
+ </div>
+    
     <div class="container body-content">
         <hr />
         <footer>
@@ -122,6 +129,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @*@RenderSection("scripts", required: false)*@
+
 </body>
 
 </html>
