@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace MVCEmpty.Controllers
 {
     public class UsuarioController : Controller
     {
         Services.UsuarioServices _UsuarioServices = new Services.UsuarioServices(); 
-        public ActionResult Login(string message="")
+        public ActionResult Login()
         {
-            ViewBag.message = message;
+           
             return View();
         }
 
@@ -23,15 +24,22 @@ namespace MVCEmpty.Controllers
               var User = _UsuarioServices.ConsultarUsuario(uname, psw);
               if (User != null )
                 {
+                    FormsAuthentication.SetAuthCookie(User.UserLoging, true);
                     return RedirectToAction("Index", "Home");
                     
                 }
                 else 
                 {
-                    return Login("No se encontraron los datos");
+                   
                 }
            }
             return View();
+        }
+        [Authorize]
+        public ActionResult LogOut()
+        {           
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login", "Usuario");
         }
     }
 }

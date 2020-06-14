@@ -1,7 +1,4 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-@model   List<Model.Tbl_Tipo_cuenta>
+﻿@model   List<Model.Tbl_Tipo_cuenta>
 @{   
     ViewBag.Title = "RegistrodeCuentas";
     //List<SelectListItem> items = (List<SelectListItem>)ViewBag.listitem;
@@ -36,7 +33,10 @@
                     </div>
                     <label for="IdTipoCuenta" class="col-md-1">Tipo Cuenta</label>
                     <div class="col-md-4">
-                       @Html.DropDownList("IdTipoCuenta", new SelectList(ViewBag.listado, "IdTipoCuenta", "NombreCuenta"), new { @class="form-control" })
+                       @if (ViewBag.listado != null)
+                       {
+                        @Html.DropDownList("IdTipoCuenta", new SelectList(ViewBag.listado, "IdTipoCuenta", "NombreCuenta"), new { @class = "form-control" })
+                       }                       
                     </div>
                 </div>
             </div>

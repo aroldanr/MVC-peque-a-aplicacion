@@ -7,7 +7,7 @@ using Model;
 
 namespace MVCEmpty.Controllers
 {
-    
+    [Authorize]    
     public class HomeController : Controller
     {
         private Tbl_Persona_Cuentas Persona = new Tbl_Persona_Cuentas();
